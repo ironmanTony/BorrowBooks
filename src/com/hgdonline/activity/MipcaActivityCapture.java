@@ -1,4 +1,4 @@
-package com.hgdonlie.activity;
+package com.hgdonline.activity;
 
 import java.io.IOException;
 import java.util.Vector;

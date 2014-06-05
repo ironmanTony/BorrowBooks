@@ -1,4 +1,4 @@
-package com.hgdonlie.activity;
+package com.hgdonline.activity;
 
 
 import com.example.qr_codescan.R;

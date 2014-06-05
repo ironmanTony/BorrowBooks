@@ -1,4 +1,4 @@
-package com.hgdonlie.activity;
+package com.hgdonline.activity;
 
 import android.app.Activity;
 import android.content.Intent;
