@@ -4,7 +4,14 @@
     <string name="app_name">QR_CodeScan</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="borrow_book">借书</string>
+    <string name="return_book">还书</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">hgdonline</string>
+    <string name="user_name">UserName</string>
+    <string name="password">Password</string>
+    <string name="button_login">login</string>
 
 </resources>
