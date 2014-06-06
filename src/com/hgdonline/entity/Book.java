@@ -6,7 +6,7 @@ public class Book {
 	//书本名称
 	private String bookName;
 	//书本编号
-	private int bookId;
+	private String bookId;
 	//出版社
 	private String publishingCompany;
 	//借出日期
@@ -20,10 +20,10 @@ public class Book {
 	public void setBookName(String bookName) {
 		this.bookName = bookName;
 	}
-	public int getBookId() {
+	public String getBookId() {
 		return bookId;
 	}
-	public void setBookId(int bookId) {
+	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
 	public String getPublishingCompany() {
@@ -35,8 +35,9 @@ public class Book {
 	public Date getBorrowDate() {
 		return borrowDate;
 	}
-	public void setBorrowDate(Date borrowDate) {
-		this.borrowDate = borrowDate;
+	//改动
+	public void setBorrowDate(java.util.Date date) {
+		this.borrowDate = (Date) date;
 	}
 	public int getIsBorrowing() {
 		return isBorrowing;
