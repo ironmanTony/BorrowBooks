@@ -14,7 +14,8 @@
     <string name="user_name">UserName</string>
     <string name="password">Password</string>
     <string name="button_login">login</string>
-    <string name="title_activity_show_books">ShowBooksActivity</string>
+    <string name="title_activity_show_books">ShowBooks</string>
     <string name="action_settings">Settings</string>
+    <string name="no_data">No Data</string>
 
 </resources>

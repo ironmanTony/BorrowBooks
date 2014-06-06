@@ -4,12 +4,18 @@
     android:layout_height="match_parent"
     android:background="#ffe1e0de" >
 
-    <ImageButton
+    <LinearLayout 
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        
+        <ImageButton
         android:id="@+id/button_borrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
         android:src="@drawable/borrow"
         android:contentDescription="@string/borrow_book" />
 
@@ -17,15 +23,18 @@
         android:id="@+id/button_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_borrow"
-        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
         android:src="@drawable/return_book"
         android:contentDescription="@string/return_book" />
+        
+    </LinearLayout>
+    
+    
     <TextView
         android:id="@+id/result"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_return"
+        android:layout_below="@+id/linear_layout"
         android:lines="2"
         android:gravity="center_horizontal"
         android:textColor="@android:color/black"

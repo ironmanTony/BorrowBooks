@@ -105,13 +105,13 @@ public class MainActivity extends Activity {
 		//当前借阅
 		case 1:
 			Intent intent = new Intent(this, ShowBooksActivity.class);
-			intent.putExtra(IS_BORROWING, 1);
+			intent.putExtra(IS_BORROWING, "1");
 			MainActivity.this.startActivity(intent);
 			break;
 		//借阅历史
 		case 2:
 			Intent intent1 = new Intent(this, ShowBooksActivity.class);
-			intent1.putExtra(IS_BORROWING, 2);
+			intent1.putExtra(IS_BORROWING, "0");
 			MainActivity.this.startActivity(intent1);
 			break;
 		//注销账号

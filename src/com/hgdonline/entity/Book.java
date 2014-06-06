@@ -12,7 +12,7 @@ public class Book {
 	//借出日期
 	private Date borrowDate;
 	//是否正在借阅 0表示已还，1表示正在借阅
-	private int isBorrowing;
+	private int isBorrowing = -1;
 	
 	public String getBookName() {
 		return bookName;
