@@ -1,28 +1,29 @@
 package com.hgdonline.activity;
 
 
-import com.example.qr_codescan.R;
+import com.hgdonline.sqlite.HandleSharedPre;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	
+	public final static String IS_BORROWING = "is_borrowing";
+	//借书
 	private final static int SCANNIN_BORROW_CODE = 1;
+	//还书
 	private final static int SCANNIN_RETURN_CODE = 2;
 	/**
 	 * 显示扫描结果
 	 */
 	private TextView mTextView ;
-	/**
-	 * 显示扫描拍的图片
-	 */
-//	private ImageView mImageView;
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +84,52 @@ public class MainActivity extends Activity {
 			}
 			break;
 		}
-    }	
+    }
+
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		menu.add(Menu.NONE,1,1,"当前借阅");
+		menu.add(Menu.NONE,2,2,"借阅历史");
+		menu.add(Menu.NONE,3,3,"注销账号");
+		menu.add(Menu.NONE,4,4,"退出登陆");
+		return super.onCreateOptionsMenu(menu);
+	}
+
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		switch(item.getItemId()){
+		//当前借阅
+		case 1:
+			Intent intent = new Intent(this, ShowBooksActivity.class);
+			intent.putExtra(IS_BORROWING, 1);
+			MainActivity.this.startActivity(intent);
+			break;
+		//借阅历史
+		case 2:
+			Intent intent1 = new Intent(this, ShowBooksActivity.class);
+			intent1.putExtra(IS_BORROWING, 2);
+			MainActivity.this.startActivity(intent1);
+			break;
+		//注销账号
+		case 3:
+			HandleSharedPre sharedPre = new HandleSharedPre(MainActivity.this);
+			sharedPre.deleteMessage();
+			Intent intent2 = new Intent(this, LoginActivity.class);
+			MainActivity.this.startActivity(intent2);
+			this.finish();
+			break;
+		//退出de
+		case 4:
+			System.exit(0);
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	
 
 }

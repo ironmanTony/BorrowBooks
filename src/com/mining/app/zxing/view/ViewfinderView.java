@@ -30,8 +30,8 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.qr_codescan.R;
 import com.google.zxing.ResultPoint;
+import com.hgdonline.activity.R;
 import com.mining.app.zxing.camera.CameraManager;
 
 /**
@@ -41,7 +41,7 @@ import com.mining.app.zxing.camera.CameraManager;
  * 
  */
 public final class ViewfinderView extends View {
-	private static final String TAG = "log";
+//	private static final String TAG = "log";
 	/**
 	 * 刷新界面的时间
 	 */
