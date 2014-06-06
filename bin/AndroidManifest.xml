@@ -20,17 +20,17 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name="com.hgdonlie.activity.MainActivity"
+            android:name="com.hgdonline.activity.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.hgdonlie.activity.MipcaActivityCapture"
+            android:name="com.hgdonline.activity.MipcaActivityCapture"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
         <activity
-            android:name="com.hgdonlie.activity.LoginActivity"
+            android:name="com.hgdonline.activity.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_login"
             android:theme="@style/FullscreenTheme" >
