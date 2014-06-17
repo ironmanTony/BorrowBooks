@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="30dp"
         >
         
         <ImageButton
@@ -16,7 +17,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:src="@drawable/borrow"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/xiong"
+        android:scaleType="centerCrop"
+        android:background="#000000"
         android:contentDescription="@string/borrow_book" />
 
     <ImageButton 
@@ -24,7 +28,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:src="@drawable/return_book"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+         android:scaleType="center"
+        android:src="@drawable/xiong"
+        android:background="#000000"
         android:contentDescription="@string/return_book" />
         
     </LinearLayout>
