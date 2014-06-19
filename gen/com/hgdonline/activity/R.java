@@ -996,7 +996,7 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int borrow=0x7f020057;
+        public static final int borrow_book=0x7f020057;
         public static final int ic_launcher=0x7f020058;
         public static final int mm_title_back_btn=0x7f020059;
         public static final int mm_title_back_focused=0x7f02005a;
@@ -1004,7 +1004,7 @@ containing a value of this type.
         public static final int mm_title_back_pressed=0x7f02005c;
         public static final int mmtitle_bg_alpha=0x7f02005d;
         public static final int return_book=0x7f02005e;
-        public static final int xiong=0x7f02005f;
+        public static final int scan_add_book=0x7f02005f;
     }
     public static final class id {
         public static final int about_version_code=0x7f060028;
@@ -1019,20 +1019,23 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f060016;
         public static final int action_menu_presenter=0x7f060017;
         public static final int action_mode_close_button=0x7f060034;
-        public static final int action_settings=0x7f06005e;
+        public static final int action_settings=0x7f060063;
         public static final int activity_chooser_view_content=0x7f060035;
         public static final int always=0x7f06000b;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f06001a;
         public static final int beginning=0x7f060011;
-        public static final int book_name=0x7f06005a;
-        public static final int book_publishing_factory=0x7f06005b;
-        public static final int borrow_date=0x7f06005c;
-        public static final int button_back=0x7f060058;
+        public static final int book_id=0x7f060060;
+        public static final int book_name=0x7f06005f;
+        public static final int borrow_date=0x7f060061;
+        public static final int button_back=0x7f06005d;
         public static final int button_borrow=0x7f060055;
+        public static final int button_cancel=0x7f06005b;
         public static final int button_login=0x7f060053;
+        public static final int button_ok=0x7f06005c;
         public static final int button_return=0x7f060056;
+        public static final int button_scan_books=0x7f060057;
         public static final int checkbox=0x7f06003d;
         public static final int collapseActionView=0x7f06000d;
         public static final int decode=0x7f06001b;
@@ -1041,6 +1044,7 @@ containing a value of this type.
         public static final int default_activity_button=0x7f060038;
         public static final int dialog=0x7f06000e;
         public static final int disableHome=0x7f060008;
+        public static final int donator=0x7f06005a;
         public static final int dropdown=0x7f06000f;
         public static final int edit_password=0x7f060052;
         public static final int edit_query=0x7f060040;
@@ -1059,10 +1063,9 @@ containing a value of this type.
         public static final int image=0x7f060037;
         public static final int include1=0x7f06004e;
         public static final int launch_product_query=0x7f060020;
-        public static final int linear_layout=0x7f060054;
         public static final int listMode=0x7f060001;
         public static final int list_item=0x7f060039;
-        public static final int menu_settings=0x7f06005d;
+        public static final int menu_settings=0x7f060062;
         public static final int middle=0x7f060012;
         public static final int never=0x7f060009;
         public static final int none=0x7f060010;
@@ -1073,12 +1076,12 @@ containing a value of this type.
         public static final int quit=0x7f060021;
         public static final int radio=0x7f06003f;
         public static final int restart_preview=0x7f060022;
-        public static final int result=0x7f060057;
         public static final int return_scan_result=0x7f060023;
         public static final int search_badge=0x7f060042;
         public static final int search_bar=0x7f060041;
         public static final int search_book_contents_failed=0x7f060024;
         public static final int search_book_contents_succeeded=0x7f060025;
+        public static final int search_book_id=0x7f060059;
         public static final int search_button=0x7f060043;
         public static final int search_close_btn=0x7f060048;
         public static final int search_edit_frame=0x7f060044;
@@ -1091,12 +1094,14 @@ containing a value of this type.
         public static final int showCustom=0x7f060007;
         public static final int showHome=0x7f060004;
         public static final int showTitle=0x7f060006;
+        public static final int show_book_id=0x7f060058;
         public static final int spinner=0x7f060050;
         public static final int split=0x7f060029;
         public static final int split_action_bar=0x7f06002e;
         public static final int submit_area=0x7f060049;
         public static final int tabMode=0x7f060002;
-        public static final int textview_title=0x7f060059;
+        public static final int table=0x7f060054;
+        public static final int textview_title=0x7f06005e;
         public static final int title=0x7f06003b;
         public static final int top_action_bar=0x7f060030;
         public static final int up=0x7f060031;
@@ -1158,13 +1163,15 @@ containing a value of this type.
         public static final int activity_login=0x7f030018;
         public static final int activity_main=0x7f030019;
         public static final int activity_show_books=0x7f03001a;
-        public static final int activity_title=0x7f03001b;
-        public static final int show_books_item=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int activity_super_user=0x7f03001b;
+        public static final int activity_title=0x7f03001c;
+        public static final int show_books_item=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int activity_main=0x7f0d0000;
         public static final int show_books=0x7f0d0001;
+        public static final int super_user=0x7f0d0002;
     }
     public static final class raw {
         public static final int beep=0x7f050000;
@@ -1213,19 +1220,26 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000b;
         public static final int action_settings=0x7f0b001b;
         public static final int app_name=0x7f0b000d;
+        public static final int barcode=0x7f0b0023;
         public static final int borrow_book=0x7f0b0012;
         public static final int button_login=0x7f0b0019;
+        public static final int cancel=0x7f0b0022;
+        public static final int donate_people=0x7f0b001f;
         public static final int dummy_button=0x7f0b0015;
         public static final int dummy_content=0x7f0b0016;
         public static final int hello_world=0x7f0b000f;
         public static final int main_activity=0x7f0b000e;
         public static final int menu_settings=0x7f0b0010;
         public static final int no_data=0x7f0b001c;
+        public static final int ok=0x7f0b0021;
         public static final int password=0x7f0b0018;
         public static final int return_book=0x7f0b0013;
+        public static final int scan_add_books=0x7f0b0020;
         public static final int scan_text=0x7f0b0011;
+        public static final int search_book_id=0x7f0b001e;
         public static final int title_activity_login=0x7f0b0014;
         public static final int title_activity_show_books=0x7f0b001a;
+        public static final int title_activity_super_user=0x7f0b001d;
         public static final int user_name=0x7f0b0017;
     }
     public static final class style {

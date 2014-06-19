@@ -22,7 +22,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	//数的各种字段
 	public static final String BOOK_NAME="book_name";//book name
 	public static final String BOOK_ID="book_id";//book id
-	public static final String PUBLISHING_CAMPANY="publishing_campany";
+	public static final String SEARCH_ID = "search_id"; //book barcode
 	public static final String  BORROW_DATE="borrow_date";
 	public static final String 	BORROW_STATE="borrow_state";
 	
@@ -32,12 +32,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase arg0) {
 		// TODO Auto-generated method stub
-		String sql="CREATE TABLE if not exists "+TABLE_NAME+"(_id integer primary key autoincrement,"
-				+ BOOK_NAME+" text,"
-				+BOOK_ID+" text,"
-				+PUBLISHING_CAMPANY+" text,"
-				+BORROW_DATE+" date,"
-				+BORROW_STATE+" integer)";
+		String sql="CREATE TABLE if not exists  bookInfo (_id integer primary key autoincrement,book_name text,book_id text,search_id text,borrow_date date,borrow_state integer)";
 		arg0.execSQL(sql);
 	}
 

@@ -3,10 +3,14 @@ package com.hgdonline.entity;
 import java.sql.Date;
 
 public class Book {
+	//捐赠者
+	private String donator;
 	//书本名称
 	private String bookName;
 	//书本编号
 	private String bookId;
+	//索书号
+	private String searchId;
 	//出版社
 	private String publishingCompany;
 	//借出日期
@@ -45,6 +49,20 @@ public class Book {
 	public void setIsBorrowing(int isBorrowing) {
 		this.isBorrowing = isBorrowing;
 	}
+	public String getSearchId() {
+		return searchId;
+	}
+	public void setSearchId(String searchId) {
+		this.searchId = searchId;
+	}
+	public String getDonator() {
+		return donator;
+	}
+	public void setDonator(String donator) {
+		this.donator = donator;
+	}
+	
+	
 	
 	
 

@@ -3,7 +3,6 @@ package com.hgdonline.activity;
 import java.io.IOException;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,11 +17,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.hgdonline.entity.Message;
 import com.hgdonline.net.ConnectNet;
 import com.hgdonline.sqlite.HandleSharedPre;
 
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 	private EditText editUserName;
 	private EditText editPassword;
 	private String userName;
@@ -30,10 +30,10 @@ public class LoginActivity extends Activity {
 	private HandleSharedPre sharePre;
 	private Handler handler;
 	private ProgressDialog dialog;
-	//获取登陆状态值
-	private int status = -1;
 	//是否超级管理员
 	private boolean isSuperUser = false;
+	
+	private Message message;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,11 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				compareUserNameAndPass();
+				if(!isConnectWifi(LoginActivity.this)){
+					Toast.makeText(LoginActivity.this, "请先连接办公室wifi！", Toast.LENGTH_LONG).show();
+				}else{
+					compareUserNameAndPass();
+				}
 			}
 		});
 		
@@ -114,7 +118,7 @@ public class LoginActivity extends Activity {
 					// TODO Auto-generated method stub
 					ConnectNet conn = ConnectNet.getConnect();
 					try{
-						status = conn.login(userName,password,isSuperUser);
+						message = conn.login(userName,password,isSuperUser);
 					}catch(IOException e){
 						e.printStackTrace();
 					}
@@ -124,7 +128,7 @@ public class LoginActivity extends Activity {
 						public void run() {
 							// TODO Auto-generated method stub
 							//如果登陆成功
-							if(ConnectNet.CONN_OK== status){
+							if(ConnectNet.OK == message.getStatus()){
 								storeUserMessage(userName, password,isSuperUser);
 								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 								intent.putExtra("userName", userName);
@@ -132,10 +136,10 @@ public class LoginActivity extends Activity {
 								intent.putExtra("isSuperUser",isSuperUser);
 								startActivity(intent);
 								LoginActivity.this.finish();
-							}else if(ConnectNet.IP_ERROR == status){//ip错误
-								Toast.makeText(LoginActivity.this, "ip不正确，请在连接办公室wifi然后登陆！", Toast.LENGTH_LONG).show();
-							}else if(ConnectNet.CONN_WRONG == status){//用户名或密码错误
-								Toast.makeText(LoginActivity.this, "用户名或密码不正确！", Toast.LENGTH_LONG).show();
+							}else if(ConnectNet.IP_ERROR == message.getStatus()){//ip错误
+								Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+							}else if(ConnectNet.FAILED == message.getStatus()){//用户名或密码错误
+								Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
 							}
 							dialog.dismiss();
 						}
@@ -184,10 +188,4 @@ public class LoginActivity extends Activity {
 		return false;
 	}
 	
-	//判断网络是否连接
-	private boolean isConnectWiFy(){
-		
-		return false;
-	}
-		
 }

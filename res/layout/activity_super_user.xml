@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="40dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+   	>
+   	
+    <TableLayout 
+        android:id="@+id/table"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+   	<TableRow >
+   	    
+   	    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="@string/barcode"
+        />
+   	    
+   	    <TextView 
+        android:id="@+id/show_book_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        />
+   	</TableRow>
+   	
+    
+	<TableRow >
+	    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="@string/search_book_id"
+        />
+    
+    <EditText 
+        android:id="@+id/search_book_id"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="text"
+        />
+	</TableRow>        
+    
+    <TableRow >
+        
+         <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:text="@string/donate_people"
+        />
+    
+    <EditText 
+        android:id="@+id/donator"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="text"
+        />
+    </TableRow>
+    
+    </TableLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="30dp"
+        >
+         <Button 
+            android:id="@+id/button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            />
+        
+        <Button 
+            android:id="@+id/button_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:text="@string/ok"
+            />
+        
+    </LinearLayout>
+    
+    
+   
+</LinearLayout>
+

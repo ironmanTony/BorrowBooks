@@ -10,7 +10,8 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -43,6 +44,11 @@
         <activity
             android:name="com.hgdonline.activity.ShowBooksActivity"
             android:label="@string/title_activity_show_books" >
+        </activity>
+        <activity
+            android:name="com.hgdonline.activity.SuperUserActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_super_user" >
         </activity>
     </application>
 

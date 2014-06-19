@@ -3,22 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffe1e0de" >
-
-    <LinearLayout 
-        android:id="@+id/linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+    
+    <TableLayout 
+        android:id="@+id/table"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         >
-        
+        <TableRow >
+            
         <ImageButton
         android:id="@+id/button_borrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/xiong"
+        android:src="@drawable/borrow_book"
         android:scaleType="centerCrop"
         android:background="#000000"
         android:contentDescription="@string/borrow_book" />
@@ -27,25 +27,28 @@
         android:id="@+id/button_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-         android:scaleType="center"
-        android:src="@drawable/xiong"
+         android:scaleType="centerCrop"
+        android:src="@drawable/return_book"
         android:background="#000000"
         android:contentDescription="@string/return_book" />
+            
+        </TableRow>
         
-    </LinearLayout>
-    
-    
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="fill_parent"
+        <TableRow 
+            android:layout_marginTop="20dp"
+            >
+             <ImageButton
+        android:id="@+id/button_scan_books"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_layout"
-        android:lines="2"
-        android:gravity="center_horizontal"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:src="@drawable/scan_add_book"
+        android:scaleType="centerCrop"
+        android:background="#000000"
+        android:contentDescription="@string/scan_add_books" />
+        </TableRow>
+        
+    </TableLayout>
+
 
 </RelativeLayout>
