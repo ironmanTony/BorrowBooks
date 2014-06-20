@@ -20,7 +20,7 @@
     <string name="title_activity_super_user">SuperUserActivity</string>
     
     <string name="search_book_id">索书号：</string>
-    <string name="donate_people">捐赠人：</string>
+    <string name="donate_people">书本来源：</string>
     <string name="scan_add_books">扫书入库</string>
     <string name="ok">确定</string>
     <string name="cancel">取消</string>

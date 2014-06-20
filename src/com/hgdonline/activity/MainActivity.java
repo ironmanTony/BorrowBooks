@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
 	private String userName;
 	private String password;
 	
-	private Message message;
+	private Message message = null;
 	
 	private boolean isSuperUser = false;
 
@@ -200,7 +200,11 @@ public class MainActivity extends BaseActivity {
 							@Override
 							public void run() {
 								// TODO Auto-generated method stub
-								Toast.makeText(MainActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+								if(message != null){
+									Toast.makeText(MainActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+								}else{
+									Toast.makeText(MainActivity.this, "ÍøÂçÁ¬½Ó³¬Ê±£¡", Toast.LENGTH_LONG).show();
+								}
 								dialog.dismiss();
 							}
 						});

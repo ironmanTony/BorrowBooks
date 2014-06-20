@@ -58,8 +58,8 @@ public class ShowBooksActivity extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		MenuItem add = menu.add(0,0,0,"±£´æ");
-		add.setIcon(android.R.drawable.ic_menu_upload);
+		MenuItem add = menu.add(0,0,0,"Ë¢ÐÂ");
+		add.setIcon(R.drawable.refresh);
 		add.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 		return true;
 	}

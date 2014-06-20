@@ -4,51 +4,61 @@
     android:layout_height="match_parent"
     android:background="#ffe1e0de" >
     
-    <TableLayout 
-        android:id="@+id/table"
-        android:layout_height="fill_parent"
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
         >
-        <TableRow >
             
         <ImageButton
         android:id="@+id/button_borrow"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:src="@drawable/borrow_book"
         android:scaleType="centerCrop"
         android:background="#000000"
         android:contentDescription="@string/borrow_book" />
 
-    <ImageButton 
+    	<ImageButton 
         android:id="@+id/button_return"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_marginLeft="20dp"
          android:scaleType="centerCrop"
         android:src="@drawable/return_book"
         android:background="#000000"
         android:contentDescription="@string/return_book" />
-            
-        </TableRow>
-        
-        <TableRow 
-            android:layout_marginTop="20dp"
-            >
-             <ImageButton
-        android:id="@+id/button_scan_books"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/linearLayout2"
+        android:layout_below="@id/linearlayout1"
         android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+        
+        <ImageButton
+        android:id="@+id/button_scan_books"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/scan_add_book"
         android:scaleType="centerCrop"
         android:background="#000000"
         android:contentDescription="@string/scan_add_books" />
-        </TableRow>
         
-    </TableLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

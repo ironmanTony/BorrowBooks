@@ -121,25 +121,33 @@ public class LoginActivity extends BaseActivity {
 						message = conn.login(userName,password,isSuperUser);
 					}catch(IOException e){
 						e.printStackTrace();
+					}catch(Exception e){
+						e.printStackTrace();
 					}
 					handler.post(new Runnable() {
 						
 						@Override
 						public void run() {
 							// TODO Auto-generated method stub
-							//如果登陆成功
-							if(ConnectNet.OK == message.getStatus()){
-								storeUserMessage(userName, password,isSuperUser);
-								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-								intent.putExtra("userName", userName);
-								intent.putExtra("password",password);
-								intent.putExtra("isSuperUser",isSuperUser);
-								startActivity(intent);
-								LoginActivity.this.finish();
-							}else if(ConnectNet.IP_ERROR == message.getStatus()){//ip错误
-								Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
-							}else if(ConnectNet.FAILED == message.getStatus()){//用户名或密码错误
-								Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+							//如果网络连接超时
+							if(message != null){
+								//如果登陆成功
+								if(ConnectNet.OK == message.getStatus()){
+									storeUserMessage(userName, password,isSuperUser);
+									Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+									intent.putExtra("userName", userName);
+									intent.putExtra("password",password);
+									intent.putExtra("isSuperUser",isSuperUser);
+									startActivity(intent);
+									LoginActivity.this.finish();
+								}else if(ConnectNet.IP_ERROR == message.getStatus()){//ip错误
+									Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+								}else if(ConnectNet.FAILED == message.getStatus()){//用户名或密码错误
+									Toast.makeText(LoginActivity.this, message.getInfo(), Toast.LENGTH_LONG).show();
+								}
+								
+							}else{
+								Toast.makeText(LoginActivity.this, "网络连接超时！", Toast.LENGTH_LONG).show();
 							}
 							dialog.dismiss();
 						}

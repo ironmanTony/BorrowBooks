@@ -2,8 +2,6 @@ package com.hgdonline.net;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,11 +57,9 @@ public class ConnectNet {
 		message.setInfo("初始错误信息！");
 		String url;
 		if(isSuperUser){
-			url = "http://book.hgdonline.net/index.php/Api/Index/loginAdmin.html?username="
-					+userName+ "&password=" + password;
+			url = "http://book.hgdonline.net/index.php/Api/Index/loginAdmin.html?username=" + userName + "&password=" + password;
 		}else{
-			url = "http://book.hgdonline.net/index.php/Api/Index/login.html?stu_id="
-					+ userName + "&password=" + password;
+			url = "http://book.hgdonline.net/index.php/Api/Index/login.html?stu_id=" + userName + "&password="+password;
 		}
 		HttpGet httpGet = new HttpGet(url);
 		HttpResponse response = getHttpClient().execute(httpGet);
@@ -82,6 +78,9 @@ public class ConnectNet {
 				}else if(404 == status){
 					message.setStatus(FAILED);
 					message.setInfo("用户名或密码错误！");
+				}else{
+					message.setInfo("未知错误");
+					message.setStatus(ERROR);
 				}
 			}catch(JSONException e){
 				e.printStackTrace();
@@ -95,16 +94,6 @@ public class ConnectNet {
 		return message;
 	}
 	
-	//get book list 
-	public List<Book> getBooks(){
-		ArrayList<Book> books = new ArrayList<Book>();
-		for(int i = 0;i<10;i++){
-			Book book = new Book();
-			book.setBookName("book"+i);
-			books.add(book);
-		}
-		return books;
-	}
 	
 	//借书
 	public Message borrowBooks(String userName, String pass, String bookId, boolean isSuperUser) throws IOException{
@@ -224,10 +213,17 @@ public class ConnectNet {
 	public Message addBooks(String userName, String password, Book book) throws IOException {
 		Message message = new Message();
 		message.setInfo("初始化错误信息");
+		String from = "";
+		String bookId = "";
+		if(book.getSearchId() != null){
+			bookId = book.getSearchId();
+		}
+		if(book.getDonator() != null){
+			from = book.getDonator();
+		}
 		if(login(userName, password, true).getStatus() == OK){
-			String url = "http://book.hgdonline.net/index.php/Api/Admin/addBook?isbn="
-					+ book.getBookId()+ "&bookID="
-					+ book.getSearchId();
+			String url = "http://book.hgdonline.net/index.php/Api/Admin/addBook?stu_id="+userName
+					+ "&isbn="+book.getBookId()+"&bookID="+bookId+"&from="+from;
 			HttpGet httpGet = new HttpGet(url);
 			HttpResponse response = getHttpClient().execute(httpGet);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
@@ -261,6 +257,8 @@ public class ConnectNet {
 	 private static synchronized HttpClient getHttpClient() {
 	        if (httpClient == null) {
 	            final HttpParams httpParams = new BasicHttpParams();
+	            HttpConnectionParams.setConnectionTimeout(httpParams, 8000);
+	            HttpConnectionParams.setSoTimeout(httpParams, 8000);
 	            httpClient = new DefaultHttpClient(httpParams);
 	        }
 	        return httpClient;

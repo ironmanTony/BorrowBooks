@@ -1,11 +1,5 @@
 package com.hgdonline.sqlite;
 
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import com.hgdonline.entity.Book;
 
 import android.content.ContentValues;
